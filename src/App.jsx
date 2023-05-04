@@ -41,7 +41,7 @@ const App = () => {
 	const handleSubmit = event => {
 		event.preventDefault()
 		if (isValid && window.confirm(`Вы уверены, что хотите отправить форму?`)) {
-			console.log({
+			const bookingData = {
 				building,
 				floor,
 				room,
@@ -49,7 +49,9 @@ const App = () => {
 				startTime,
 				endTime,
 				comment,
-			})
+			}
+			const bookingDataJson = JSON.stringify(bookingData)
+			console.log(bookingDataJson)
 		}
 	}
 
